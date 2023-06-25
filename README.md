@@ -38,7 +38,7 @@ Um exemplo ditatico de como controlar servomotor utilizando um joystick.
   
 ## Ligação Leds:
 - Positivo (Perna Maior): Em uma saida digital do raspberry pico (17 GP13 para Amarelo e 20 GP15 para Verde)
-- Negativo (Perna Menor/Lado Chanfro): Em um resitor de 220Ω e o resitor no terra
+- Negativo (Perna Menor/Lado Chanfro): Em um resitor de 220Ω e o resistor no terra
   
 ## Ligação Motores:
 -  Fio Preto: Terra
