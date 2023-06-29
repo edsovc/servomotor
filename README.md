@@ -61,3 +61,9 @@ graph LR;
 -  VRY: Porta com suporte conversão analógico digital (ADC) (31 GP26/ADC0)
 -  SW: Porta digital (34 GP28)
 
+# Video de Como Utilizar
+
+https://www.youtube.com/watch?v=3D3U0qgkGvI
+
+Press play to see the video.
+
