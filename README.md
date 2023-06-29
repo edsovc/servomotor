@@ -15,8 +15,11 @@ Um exemplo didático de como controlar servomotor utilizando um joystick.
 - 1 Raspberry Pico (https://www.eletrogate.com/raspberry-pi-pico)
 - 1 Fonte 5V 1A (https://www.eletrogate.com/fonte-5v-1a)
 - 1 Fonte USB (https://www.makerhero.com/produto/fonte-dc-chaveada-5v-2a-micro-usb)
+- 1 Conector Adaptador Plug P4 Macho com Borne (https://www.makerhero.com/produto/conector-adaptador-plug-p4-macho-com-borne)
+- 1 Proboard 400 pontos (https://www.eletrogate.com/protoboard-400-pontos)
+- Jumpers Macho-Macho cores diversas (https://www.eletrogate.com/jumpers-macho-macho-20-unidades-de-20-cm)
   
-## Portas Raspberry Pico:
+## Portas Raspberry Pico Usadas:
 - 3 GND: Terra
 - 17 GP13: Positivo Led Amarelo
 - 20 GP15: Positivo Led Verde
@@ -34,7 +37,7 @@ Um exemplo didático de como controlar servomotor utilizando um joystick.
 -  Motores: Fonte 5V 1A
 
   Não esqueçar de interligar os terras do Raspberry Pico da Fonte 5V 1A.\
-  Não misturar 5V da fonte com 3V3 do Raspberry Pico, pois irá queimar o Raspberry Pico.
+  Não misturar 5V da fonte com 3,3V do Raspberry Pico, pois irá queimar o Raspberry Pico.
   
 ## Ligação Leds:
 - Positivo (Perna Maior): Em uma saida digital do raspberry pico (17 GP13 para Amarelo e 20 GP15 para Verde)
