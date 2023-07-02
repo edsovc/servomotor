@@ -66,7 +66,7 @@ graph LR;
 
 # Video de Como Utilizar
 
-https://www.youtube.com/watch?v=3D3U0qgkGvI
+[https://www.youtube.com/watch?v=3D3U0qgkGvI](https://youtu.be/u6eRrXPFQXM)
 
 Press play to see the video.
 
