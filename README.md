@@ -68,5 +68,5 @@ graph LR;
 
 [https://www.youtube.com/watch?v=3D3U0qgkGvI](https://youtu.be/u6eRrXPFQXM)
 
-Press play to see the video.
+Clique no link acima para ser direcionado par ao YouTube.
 
