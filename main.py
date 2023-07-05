@@ -63,6 +63,7 @@ def moveNaDirecao(servo, angulo): #Move 1 grau o servo na direção da posição
 
 while True:
   #No loop não pode ter delay, pois é tratado a entrada do usuário
+  #Como são tratados diversos eventos que não são sincronizados, o melhor método é loop e não delay
   agora=utime.ticks_ms() #Milisegundos atual
   #O led onboard piscando é para saber se o programa está rodando.
   if agora>ultimaTrocaLed+PERIODOTROCALED: #Se já passou o tempo para trocar o estado do led
