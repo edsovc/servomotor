@@ -35,20 +35,20 @@ ledAmarelo.value(0) #Começa apagado
 ledVerde=Pin(PINOLEDVERDE,Pin.OUT)
 ledVerde.value(1) #Começa ligado
 
-botao=Pin(PINOBOTAO,Pin.IN, Pin.PULL_UP)  
-eixoX = ADC(Pin(PINOEIXOX))
+botao=Pin(PINOBOTAO,Pin.IN, Pin.PULL_UP) #Em qual porta está ligado o botão do Joystick 
+eixoX = ADC(Pin(PINOEIXOX)) #Conversor Analogico para Digital para ler o Eixo X
 eixoY = ADC(Pin(PINOEIXOY))
 
-servoY = Servo(PINOSERVOY)
+servoY = Servo(PINOSERVOY) #Controlador do MotorY
 servoX = Servo(PINOSERVOX)
 
-#Posiciona o servo na posição do meio
+#Posiciona o servo na posição do meio=90 graus
 servoY.moverParaAngulo(90) 
 servoX.moverParaAngulo(90) 
 
-ultimaTrocaLed=0
+ultimaTrocaLed=0 #Quando ocorreu a última mudanca apagado-acesso do Led on Board. Iniciado com Zero para garantir que irá mudar no primeiro ciclo.
 PERIODOTROCALED=100 #Periodo em milisegundos para trocar o estado do led onboard
-ultimaApertadaBotao=0
+ultimaApertadaBotao=0 #Para fazer o debounce do botão (  https://www.makerhero.com/blog/debounce-o-que-e-e-como-resolver-via-software/  )
 PERIODOTESTEBOTAO=300 #Periodo em milisegundos para testar o botão pressionado. Faz o debounce e repetição se mantido pressionado.
 
 def moveNaDirecao(servo, angulo): #Move 1 grau o servo na direção da posição desejada. Deve ser chamada inúmeras vezes até chegar na posição. A intenção das chamadas é estar em um loop.
@@ -66,13 +66,13 @@ while True:
   agora=utime.ticks_ms() #Milisegundos atual
   #O led onboard piscando é para saber se o programa está rodando.
   if agora>ultimaTrocaLed+PERIODOTROCALED: #Se já passou o tempo para trocar o estado do led
-    ultimaTrocaLed=agora
-    ledOnBoard.toggle()
+    ultimaTrocaLed=agora #Guarda quando que ocorreu a ultima troca, para saber quando deverá ocorrer a próxima
+    ledOnBoard.toggle() #Troca o estado do Led (Apagado - Acesso)
   if agora>ultimaApertadaBotao+PERIODOTESTEBOTAO: #Se já passou o tempo para testar a tecla
     if botao.value()==0: #Se o botão foi/está apertado
-      ultimaApertadaBotao=agora
-      ledAmarelo.toggle()
-      ledVerde.toggle()
+      ultimaApertadaBotao=agora #Guarda quando o botão foi pressionado e não trata mais o botão até passar PERIODOTESTEBOTAO milisegundos
+      ledAmarelo.toggle() #Troca o estado do Led (Apagado - Acesso)
+      ledVerde.toggle() #Troca o estado do Led (Apagado - Acesso)
   #Le o Joystick
   valorY = eixoY.read_u16()
   valorX = eixoX.read_u16()
